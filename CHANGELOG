@@ -1,0 +1,15 @@
+
+*** CHANGE LOG ***
+0.0.1:
+        * Initial Public Release
+
+0.0.2:
+        * Removed all path concatenations using "/" to File.separator
+                - (Thanks to Raul Leite for the tip)
+
+0.0.3:
+        * Switched some strings names just to become better for the eyes
+                - (Again thanks to Raul Leite)
+
+0.0.4:
+	* Now you can delete objects, see TestClass for it.

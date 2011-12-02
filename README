@@ -11,14 +11,6 @@ This code still have some objects for testing and my TestClass on how to use
 it.
 
 
-*** CHANGE LOG ***
-0.0.1:
-	* Initial Public Release
+Thanks list:
 
-0.0.2:
-	* Removed all path concatenations using "/" to File.pathSeparator
-		- (Thanks to Raul Leite for the tip)
-
-0.0.3:
-	* Switched some strings names just to become better for the eyes
-		- (Again thanks to Raul Leite)
+Raul Leite, for the File.separator and some tips on better looking code.

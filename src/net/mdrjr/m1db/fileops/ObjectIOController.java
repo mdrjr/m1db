@@ -11,7 +11,7 @@ public class ObjectIOController {
 	
 	public void save(String storageFullPath, Object obj, Integer objId) {
 		try {
-			storageFullPath = storageFullPath + File.pathSeparator + objId.toString() + ".obj";
+			storageFullPath = storageFullPath + File.separator + objId.toString() + ".obj";
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(storageFullPath));
 			oos.writeObject(obj);
 		} catch (Exception e) {
@@ -22,13 +22,23 @@ public class ObjectIOController {
 	public Object restore(String storageFullpath, String table, Integer objId) {
 		Object retObj = null;
 		try {
-			storageFullpath = storageFullpath + File.pathSeparator + table + File.pathSeparator + objId.toString() + ".obj";
+			storageFullpath = storageFullpath + File.separator + table + File.separator + objId.toString() + ".obj";
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(storageFullpath));
 			retObj = ois.readObject();
 		} catch(Exception E) {
 			E.printStackTrace();
 		}
 		return retObj;
+	}
+	
+	public boolean delete(String storageFullPath, String table, Integer objId) {
+		boolean ret = false;
+		 
+			storageFullPath = storageFullPath + File.separator + table + File.separator + objId.toString() + ".obj";
+			File f = new File(storageFullPath);
+			ret = f.delete();
+		
+		return ret;
 	}
 	
 }

@@ -11,7 +11,7 @@ public class M1ObjectControl {
 	
 	public boolean save(M1DBConfig dbConfig, String table, Object object, Integer objid) {
 		boolean ret = false;
-		oIOC.save(dbConfig.getStorageFolder() + File.pathSeparator + table, object, objid);
+		oIOC.save(dbConfig.getStorageFolder() + File.separator + table, object, objid);
 		return ret;
 	}
 
@@ -19,5 +19,12 @@ public class M1ObjectControl {
 		Object retObj = null;
 			retObj = oIOC.restore(dbConfig.getStorageFolder(), table, objId);
 		return retObj;
+	}
+	
+	public boolean delete(M1DBConfig dbConfig, String table, Integer objId) { 
+		boolean ret = false;
+			ret = oIOC.delete(dbConfig.getStorageFolder() + File.separator, table, objId);
+		return ret;
+		
 	}
 }

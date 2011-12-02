@@ -24,7 +24,7 @@ public class M1DBConfig implements Serializable {
 		setStorageFolder(storageFolder);
 		StorageFolder.testStorageFolder(getStorageFolder());
 		TableFolder.testTablesFolder(getTables(), getStorageFolder());
-		setM1logger(new M1Logger(getStorageFolder() + File.pathSeparator + getLogfile()));
+		setM1logger(new M1Logger(getStorageFolder() + File.separator + getLogfile()));
 		
 	}
 

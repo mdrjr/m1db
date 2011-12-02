@@ -21,6 +21,7 @@ public class TestClass {
 		
 		System.out.println(gol.calculaAnoCarro());
 		System.out.println(gol.contaAcessorios());
+		m1objc.delete(dbConfig, "carros", 1);
 		
 		
 		/*gol.setAno(2009);
