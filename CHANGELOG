@@ -14,3 +14,7 @@
 0.0.4:
 	* Now you can delete objects, see TestClass for it.
 	* Moved the changelog from readme to this file.
+
+0.0.5:
+	* Better use of the own logging system. In fact we are using it now
+	* Logfile are a little too much informative so take care for now.

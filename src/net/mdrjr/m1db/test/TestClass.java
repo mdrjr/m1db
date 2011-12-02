@@ -19,8 +19,7 @@ public class TestClass {
 		
 		Carro gol = (Carro) m1objc.restore(dbConfig, "carros", 1);
 		
-		System.out.println(gol.calculaAnoCarro());
-		System.out.println(gol.contaAcessorios());
+
 		m1objc.delete(dbConfig, "carros", 1);
 		
 		
