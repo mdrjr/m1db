@@ -11,14 +11,14 @@ public class TableFolder implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public static void testTablesFolder(List<String> tables, String storage_folder) {
+	public static void testTablesFolder(List<String> tables, String storageFolder) {
 		for (String table : tables) {
-			testTableFolder(table, storage_folder);
+			testTableFolder(table, storageFolder);
 		}
 	}
 	
-	public static void testTableFolder(String table, String storage_folder) {
-		File f = new File(storage_folder + File.pathSeparator +table);
+	public static void testTableFolder(String table, String storageFolder) {
+		File f = new File(storageFolder + File.pathSeparator +table);
 		if(!f.isDirectory()) {
 			System.out.println("Table Folder: " + table + " is not a folder");
 			System.exit(1);

@@ -14,17 +14,17 @@ public class M1DBConfig implements Serializable {
 
 	private List<String> tables;
 	private String dbname;
-	private String storage_folder;
+	private String storageFolder;
 	private String logfile;
 	private M1Logger m1logger;
 	
-	public M1DBConfig(String storage_folder, List<String> tables, String logfile) {
+	public M1DBConfig(String storageFolder, List<String> tables, String logfile) {
 		setTables(tables);
 		setLogfile(logfile);
-		setStorage_folder(storage_folder);
-		StorageFolder.testStorageFolder(getStorage_folder());
-		TableFolder.testTablesFolder(getTables(), getStorage_folder());
-		setM1logger(new M1Logger(getStorage_folder() + File.pathSeparator + getLogfile()));
+		setStorageFolder(storageFolder);
+		StorageFolder.testStorageFolder(getStorageFolder());
+		TableFolder.testTablesFolder(getTables(), getStorageFolder());
+		setM1logger(new M1Logger(getStorageFolder() + File.pathSeparator + getLogfile()));
 		
 	}
 
@@ -44,12 +44,12 @@ public class M1DBConfig implements Serializable {
 		this.dbname = dbname;
 	}
 
-	public String getStorage_folder() {
-		return storage_folder;
+	public String getStorageFolder() {
+		return storageFolder;
 	}
 
-	public void setStorage_folder(String storage_folder) {
-		this.storage_folder = storage_folder;
+	public void setStorageFolder(String storageFolder) {
+		this.storageFolder = storageFolder;
 	}
 
 	public String getLogfile() {

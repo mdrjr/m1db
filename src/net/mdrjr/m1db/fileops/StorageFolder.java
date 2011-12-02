@@ -10,10 +10,10 @@ public class StorageFolder implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public static void testStorageFolder(String storage_folder) {
-			File f = new File(storage_folder);
+	public static void testStorageFolder(String storageFolder) {
+			File f = new File(storageFolder);
 				if(!f.exists()) {
-					createStorageFolder(storage_folder);
+					createStorageFolder(storageFolder);
 				}
 				if(!f.isDirectory()) {
 					System.out.println("Storage Folder is a File! Fix it");
@@ -21,8 +21,8 @@ public class StorageFolder implements Serializable {
 				}
 			}
 	
-	private static void createStorageFolder(String storage_folder) {
-		File f = new File(storage_folder);
+	private static void createStorageFolder(String storageFolder) {
+		File f = new File(storageFolder);
 		try {
 			f.mkdirs();
 		} catch (Exception e) {

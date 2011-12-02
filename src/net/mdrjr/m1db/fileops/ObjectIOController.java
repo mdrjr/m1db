@@ -9,21 +9,21 @@ import java.io.ObjectOutputStream;
 public class ObjectIOController {
 
 	
-	public void save(String storage_full_path, Object obj, Integer objId) {
+	public void save(String storageFullPath, Object obj, Integer objId) {
 		try {
-			storage_full_path = storage_full_path + File.pathSeparator + objId.toString() + ".obj";
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(storage_full_path));
+			storageFullPath = storageFullPath + File.pathSeparator + objId.toString() + ".obj";
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(storageFullPath));
 			oos.writeObject(obj);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public Object restore(String storage_full_path, String table, Integer objId) {
+	public Object restore(String storageFullpath, String table, Integer objId) {
 		Object retObj = null;
 		try {
-			storage_full_path = storage_full_path + File.pathSeparator + table + File.pathSeparator + objId.toString() + ".obj";
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(storage_full_path));
+			storageFullpath = storageFullpath + File.pathSeparator + table + File.pathSeparator + objId.toString() + ".obj";
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(storageFullpath));
 			retObj = ois.readObject();
 		} catch(Exception E) {
 			E.printStackTrace();

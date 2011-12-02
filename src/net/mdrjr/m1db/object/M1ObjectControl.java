@@ -11,13 +11,13 @@ public class M1ObjectControl {
 	
 	public boolean save(M1DBConfig dbConfig, String table, Object object, Integer objid) {
 		boolean ret = false;
-		oIOC.save(dbConfig.getStorage_folder() + File.pathSeparator + table, object, objid);
+		oIOC.save(dbConfig.getStorageFolder() + File.pathSeparator + table, object, objid);
 		return ret;
 	}
 
 	public Object restore(M1DBConfig dbConfig, String table, Integer objId) {
 		Object retObj = null;
-			retObj = oIOC.restore(dbConfig.getStorage_folder(), table, objId);
+			retObj = oIOC.restore(dbConfig.getStorageFolder(), table, objId);
 		return retObj;
 	}
 }
