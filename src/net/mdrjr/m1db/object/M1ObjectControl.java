@@ -1,5 +1,7 @@
 package net.mdrjr.m1db.object;
 
+import java.io.File;
+
 import net.mdrjr.m1db.config.M1DBConfig;
 import net.mdrjr.m1db.fileops.ObjectIOController;
 
@@ -9,7 +11,7 @@ public class M1ObjectControl {
 	
 	public boolean save(M1DBConfig dbConfig, String table, Object object, Integer objid) {
 		boolean ret = false;
-		oIOC.save(dbConfig.getStorage_folder() + "/" + table, object, objid);
+		oIOC.save(dbConfig.getStorage_folder() + File.pathSeparator + table, object, objid);
 		return ret;
 	}
 

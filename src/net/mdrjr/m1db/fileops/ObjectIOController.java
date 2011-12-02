@@ -1,5 +1,6 @@
 package net.mdrjr.m1db.fileops;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -10,7 +11,7 @@ public class ObjectIOController {
 	
 	public void save(String storage_full_path, Object obj, Integer objId) {
 		try {
-			storage_full_path = storage_full_path + "/" + objId.toString() + ".obj";
+			storage_full_path = storage_full_path + File.pathSeparator + objId.toString() + ".obj";
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(storage_full_path));
 			oos.writeObject(obj);
 		} catch (Exception e) {
@@ -21,7 +22,7 @@ public class ObjectIOController {
 	public Object restore(String storage_full_path, String table, Integer objId) {
 		Object retObj = null;
 		try {
-			storage_full_path = storage_full_path + "/" + table + "/" + objId.toString() + ".obj";
+			storage_full_path = storage_full_path + File.pathSeparator + table + File.pathSeparator + objId.toString() + ".obj";
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(storage_full_path));
 			retObj = ois.readObject();
 		} catch(Exception E) {

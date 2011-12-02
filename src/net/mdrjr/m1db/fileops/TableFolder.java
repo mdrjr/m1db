@@ -18,7 +18,7 @@ public class TableFolder implements Serializable {
 	}
 	
 	public static void testTableFolder(String table, String storage_folder) {
-		File f = new File(storage_folder +"/" +table);
+		File f = new File(storage_folder + File.pathSeparator +table);
 		if(!f.isDirectory()) {
 			System.out.println("Table Folder: " + table + " is not a folder");
 			System.exit(1);

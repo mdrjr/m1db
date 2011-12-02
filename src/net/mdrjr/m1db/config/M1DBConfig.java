@@ -1,5 +1,6 @@
 package net.mdrjr.m1db.config;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class M1DBConfig implements Serializable {
 		setStorage_folder(storage_folder);
 		StorageFolder.testStorageFolder(getStorage_folder());
 		TableFolder.testTablesFolder(getTables(), getStorage_folder());
-		setM1logger(new M1Logger(getStorage_folder() + "/" + getLogfile()));
+		setM1logger(new M1Logger(getStorage_folder() + File.pathSeparator + getLogfile()));
 		
 	}
 
