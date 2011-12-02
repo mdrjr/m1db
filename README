@@ -9,3 +9,12 @@ You can check out the code and my tests.
 
 This code still have some objects for testing and my TestClass on how to use
 it.
+
+
+*** CHANGE LOG ***
+0.0.1:
+	* Initial Public Release
+
+0.0.2:
+	* Removed all path concatenations using "/" to File.pathSeparator
+	* (Thanks to Raul Leite for the tip)
