@@ -13,3 +13,4 @@
 
 0.0.4:
 	* Now you can delete objects, see TestClass for it.
+	* Moved the changelog from readme to this file.
