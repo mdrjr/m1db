@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import net.mdrjr.m1db.object.ProxyObject;
+
 public class ObjectIOController {
 
 	
@@ -17,10 +19,10 @@ public class ObjectIOController {
 			oos.writeObject(obj);
 	}
 	
-	public Object restore(String storageFullpath, String table, Integer objId) throws FileNotFoundException, IOException, ClassNotFoundException {
+	public ProxyObject restore(String storageFullpath, String table, Integer objId) throws FileNotFoundException, IOException, ClassNotFoundException {
 		storageFullpath = storageFullpath + File.separator + table + File.separator + objId.toString() + ".obj";
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(storageFullpath));
-		return ois.readObject();
+		return (ProxyObject) ois.readObject();
 	}
 	
 	public boolean delete(String storageFullPath, String table, Integer objId) {

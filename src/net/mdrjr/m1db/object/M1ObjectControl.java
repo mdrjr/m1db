@@ -8,11 +8,12 @@ import net.mdrjr.m1db.fileops.ObjectIOController;
 public class M1ObjectControl {
 
 	private ObjectIOController oIOC = new ObjectIOController();
+	private ObjectProxyController oPC = new ObjectProxyController();
 	
 	public boolean save(M1DBConfig dbConfig, String table, Object object, Integer objid) {
 		boolean ret = false;
 		try {
-			oIOC.save(dbConfig.getStorageFolder() + File.separator + table, object, objid);
+			oIOC.save(dbConfig.getStorageFolder() + File.separator + table, oPC.proxyTo(object), objid);
 		} catch(Exception e) {
 			dbConfig.getM1logger().log(e.getMessage());
 		}
@@ -23,7 +24,7 @@ public class M1ObjectControl {
 	public Object restore(M1DBConfig dbConfig, String table, Integer objId) {
 		Object retObj = null;
 		try {
-			retObj = oIOC.restore(dbConfig.getStorageFolder(), table, objId);
+			retObj = oPC.proxyBack(oIOC.restore(dbConfig.getStorageFolder(), table, objId));
 		} catch(Exception e) {
 			dbConfig.getM1logger().log(e.getMessage());
 		}

@@ -18,3 +18,6 @@
 0.0.5:
 	* Better use of the own logging system. In fact we are using it now
 	* Logfile are a little too much informative so take care for now.
+
+0.0.6:
+	* Added a Object Proxy, will make life easier for moving objects around.

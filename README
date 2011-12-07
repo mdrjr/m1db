@@ -11,6 +11,17 @@ This code still have some objects for testing and my TestClass on how to use
 it.
 
 
+Known Limitations:
+The incoming object must implements Serializable!
+I/O Performance
+No client/server -- YET! --
+No indexing -- YET! --
+
+
+Todo:
+Client/Server stuff
+Indexing 
+
 Thanks list:
 
 Raul Leite, for the File.separator and some tips on better looking code.

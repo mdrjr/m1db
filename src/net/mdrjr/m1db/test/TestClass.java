@@ -19,11 +19,12 @@ public class TestClass {
 		
 		Carro gol = (Carro) m1objc.restore(dbConfig, "carros", 1);
 		
-
-		m1objc.delete(dbConfig, "carros", 1);
+		System.out.println(gol.calculaAnoCarro());
+		System.out.println(gol.contaAcessorios());
+/*		m1objc.delete(dbConfig, "carros", 1);
 		
-		
-		/*gol.setAno(2009);
+		Carro gol = new Carro();
+		gol.setAno(2009);
 		gol.setCor("Preto");
 		gol.setFabricante("Volkswagen");
 		gol.setModelo("Gol G5");
@@ -31,10 +32,10 @@ public class TestClass {
 		
 		gol.adicionaAcessorio("Vidro Eletrico");
 		gol.adicionaAcessorio("Trava Eletrica");
-		gol.adicionaAcessorio("Rodas de Liga Leve");*/
+		gol.adicionaAcessorio("Rodas de Liga Leve");
 		
-		// bjc.save(dbConfig, "carros", gol, 1);
-		
+		m1objc.save(dbConfig, "carros", gol, 1);
+*/		
 		
 		/*SimplePojo sp = new SimplePojo();
 		sp.setAge(26);

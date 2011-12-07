@@ -20,7 +20,10 @@ public class TableFolder implements Serializable {
 	public static void testTableFolder(String table, String storageFolder) {
 		String tableFullPath = storageFolder + File.separator + table; 
 		File f = new File(tableFullPath);
-		if(!f.isDirectory()) {
+		if(!f.exists()) {
+			f.mkdirs();
+		}
+		if(!f.isDirectory() && f.exists()) {
 			System.out.println("Table Folder: " + table + " is not a folder");
 			System.exit(1);
 		}

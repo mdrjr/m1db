@@ -12,6 +12,9 @@ public class Carro implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	
 	private String fabricante;
 	private String modelo;
