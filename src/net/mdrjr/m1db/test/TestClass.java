@@ -13,15 +13,15 @@ public class TestClass {
 		List<String> tables = new ArrayList<String>();
 		tables.add("clientes");
 		tables.add("carros");
-		M1DBConfig dbConfig = new M1DBConfig("/home/mdrjr/Develop/m1-db/storage", tables, "dblog.txt");
+	//	M1DBConfig dbConfig = new M1DBConfig("/home/mdrjr/Develop/m1-db/storage", tables, "dblog.txt");
 		
-		M1ObjectControl m1objc = new M1ObjectControl();
+/*		M1ObjectControl m1objc = new M1ObjectControl();
 		
 		Carro gol = (Carro) m1objc.restore(dbConfig, "carros", 1);
 		
 		System.out.println(gol.calculaAnoCarro());
 		System.out.println(gol.contaAcessorios());
-/*		m1objc.delete(dbConfig, "carros", 1);
+*//*		m1objc.delete(dbConfig, "carros", 1);
 		
 		Carro gol = new Carro();
 		gol.setAno(2009);

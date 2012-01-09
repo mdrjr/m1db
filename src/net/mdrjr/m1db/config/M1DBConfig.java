@@ -1,6 +1,5 @@
 package net.mdrjr.m1db.config;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,15 +16,19 @@ public class M1DBConfig implements Serializable {
 	private String storageFolder;
 	private String logfile;
 	private M1Logger m1logger;
+	private Integer networkPort;
+	private String networkPassword;
 	
-	public M1DBConfig(String storageFolder, List<String> tables, String logfile) {
+	
+	public M1DBConfig(String storageFolder, List<String> tables, String logfile, Integer networkPort, String networkPassword) {
+		setNetworkPassword(networkPassword);
+		setNetworkPort(networkPort);
 		setTables(tables);
 		setLogfile(logfile);
 		setStorageFolder(storageFolder);
 		StorageFolder.testStorageFolder(getStorageFolder());
 		TableFolder.testTablesFolder(getTables(), getStorageFolder());
-		setM1logger(new M1Logger(getStorageFolder() + File.separator + getLogfile()));
-		
+		setM1logger(new M1Logger(getLogfile()));
 	}
 
 	public List<String> getTables() {
@@ -66,6 +69,22 @@ public class M1DBConfig implements Serializable {
 
 	public void setM1logger(M1Logger m1logger) {
 		this.m1logger = m1logger;
+	}
+
+	public Integer getNetworkPort() {
+		return networkPort;
+	}
+
+	public void setNetworkPort(Integer networkPort) {
+		this.networkPort = networkPort;
+	}
+
+	public String getNetworkPassword() {
+		return networkPassword;
+	}
+
+	public void setNetworkPassword(String networkPassword) {
+		this.networkPassword = networkPassword;
 	}
 	
 	
